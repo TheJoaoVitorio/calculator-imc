@@ -90,6 +90,11 @@ class _calculatorImcState extends State<calculatorImc> {
                   double peso = double.parse(pesoController.text);
                   double altura = double.parse(alturaController.text);
 
+                  if (peso <= 0 || altura <= 0) {
+                    showError("Valores devem ser maiores que zero!");
+                    return;
+                  }
+
                   setState(() {
                     imc = peso / (altura * altura);
                     classification = getClassificationIMC(imc);
@@ -109,6 +114,12 @@ class _calculatorImcState extends State<calculatorImc> {
           ],
         ),
       ),
+    );
+  }
+
+  void showError(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message, style: TextStyle(fontSize: 18),), backgroundColor: Colors.redAccent),
     );
   }
 

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class ButtonCalculator extends StatelessWidget {
   ButtonCalculator({
     required this.onPressed,
-    //required this.
   });
 
   final Function onPressed;

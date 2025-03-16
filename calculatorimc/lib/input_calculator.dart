@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class InputCalculator extends StatelessWidget {
   InputCalculator({required this.controller, required this.suffixText});
@@ -14,6 +15,9 @@ class InputCalculator extends StatelessWidget {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         suffixText: 'kg',
       ),
+      inputFormatters: [
+        FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*$'))
+      ],
       keyboardType: TextInputType.number,
     );
   }

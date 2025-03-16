@@ -13,7 +13,7 @@ class InputCalculator extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-        suffixText: 'kg',
+        suffixText: suffixText,
       ),
       inputFormatters: [
         FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*$'))
